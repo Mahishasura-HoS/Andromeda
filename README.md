@@ -93,5 +93,5 @@ Andromeda is released under the MIT License. See the LICENSE file for more detai
 📞 Contact
 Have questions or need support?
 
-[YOUR NAME/PSEUDONYM] - [YOUR EMAIL OR SOCIAL MEDIA HANDLE]
-Project Link: https://github.com/YourUsername/Andromeda
+[TheBloodredEagle] - [mahishasura.hos@gmail.com]
+Project Link: https://github.com/Mahishasura-HoS/Andromeda
