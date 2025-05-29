@@ -3,6 +3,10 @@ import getpass
 import os
 import time
 import json  # To save and load user data
+print(Fore.GREEN +'''Modules loaded successfully!''')
+time.sleep(6)
+print(Fore.RED +'''Please wait, Andromeda will launch !''')
+time.sleep(2)
 
 print(Fore.RED + '''
 ██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
