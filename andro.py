@@ -2,7 +2,18 @@ from colorama import Fore, Style
 import sys
 from Modules import *
 import os
+import sys
+import json
+from colorama import Fore, Style
+import getpass
 import time
+
+# --- Configuration for User Data File and Session File ---
+USER_DATA_FILE = 'users.json' # Stores user credentials
+SESSION_FILE = 'andromeda_session.json' # Stores login state (e.g., a simple flag)
+
+# --- Global User Database (Loaded from/Saved to JSON) ---
+USERS = {}
 print(Fore.GREEN +'''Modules loaded successfully!''')
 time.sleep(3)
 print(Fore.RED +'''Please wait, Andromeda will launch !''')
@@ -17,6 +28,54 @@ print(Fore.RED + '''
  ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ TO
 ''')
 
+def load_users():
+    """Loads user data from the JSON file."""
+    global USERS
+    if os.path.exists(USER_DATA_FILE):
+        try:
+            with open(USER_DATA_FILE, 'r') as f:
+                USERS = json.load(f)
+            print(Fore.GREEN + f"  Successfully loaded user data from '{USER_DATA_FILE}'." + Style.RESET_ALL)
+        except json.JSONDecodeError:
+            print(Fore.RED + f"  Error decoding JSON from '{USER_DATA_FILE}'. Starting with empty users." + Style.RESET_ALL)
+            USERS = {}
+        except Exception as e:
+            print(Fore.RED + f"  An unexpected error occurred loading '{USER_DATA_FILE}': {e}" + Style.RESET_ALL)
+            USERS = {}
+    else:
+        print(Fore.YELLOW + f"  '{USER_DATA_FILE}' not found. A new file will be created on save." + Style.RESET_ALL)
+
+def save_users():
+    """Saves current user data to the JSON file."""
+    try:
+        with open(USER_DATA_FILE, 'w') as f:
+            json.dump(USERS, f, indent=4)
+        print(Fore.GREEN + f"  Successfully saved user data to '{USER_DATA_FILE}'." + Style.RESET_ALL)
+    except Exception as e:
+        print(Fore.RED + f"  Error saving user data to '{USER_DATA_FILE}': {e}" + Style.RESET_ALL)
+
+# --- Functions to Handle Session State ---
+def save_session():
+    """Creates the session file to indicate a logged-in state."""
+    try:
+        with open(SESSION_FILE, 'w') as f:
+            f.write('logged_in') # A simple indicator
+        print(Fore.GREEN + "  Session saved. Auto-login next time." + Style.RESET_ALL)
+    except Exception as e:
+        print(Fore.RED + f"  Error saving session: {e}" + Style.RESET_ALL)
+
+def clear_session():
+    """Deletes the session file to clear the logged-in state."""
+    if os.path.exists(SESSION_FILE):
+        try:
+            os.remove(SESSION_FILE)
+            print(Fore.YELLOW + "  Session cleared. Will require login next time." + Style.RESET_ALL)
+        except Exception as e:
+            print(Fore.RED + f"  Error clearing session: {e}" + Style.RESET_ALL)
+
+def check_session():
+    """Checks if a session file exists, indicating a previous login."""
+    return os.path.exists(SESSION_FILE)
 os.system('cls' if os.name == 'nt' else 'clear')
 time.sleep(2)
 
@@ -25,7 +84,8 @@ def andro_menu():
     print(Fore.RED + "   / \\  | \\ | |  _ \\|  _ \\ / _ \\|  \\/  | ____|  _ \\  / \\   ")
     print(Fore.RED + "  / _ \\ |  \\| | | | | |_) | | | | |\\/| |  _| | | | |/ _ \\  ")
     print(Fore.BLUE + " / ___ \\| |\\  | |_| |  _ <| |_| | |  | | |___| |_| / ___ \\ ")
-    print(Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
+    print(
+        Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                 MENU                                           ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -34,7 +94,7 @@ def andro_menu():
        [2] Forensic                  [6] Misc
        [3] Cracking                  [7] Reverse 
        [4] Scripting                 [8] Web 
-       
+
        [99] Exit
         ''')
     print(Fore.WHITE)
@@ -86,6 +146,8 @@ def andro_menu():
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
+
+
 ## Menu settings
 # OSINT menu
 
@@ -138,6 +200,8 @@ def menu_osint():
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
+
+
 # --- Name Searching Sub-Menu ---
 def name_search():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -153,7 +217,8 @@ def name_search():
     ''')
     print('\r')
     try:
-        choice = input(Fore.RED + "name_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        choice = input(
+            Fore.RED + "name_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
         print('\r')
         if choice == "1":
             print("  Performing Public Records Search...")
@@ -185,6 +250,7 @@ def name_search():
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
+
 
 # --- Phone Directory Sub-Menu ---
 def phone():
@@ -230,6 +296,7 @@ def phone():
         print('\n')
         sys.exit()
 
+
 # --- IP Information Sub-Menu ---
 def ip():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -273,12 +340,14 @@ def ip():
         print('\n')
         sys.exit()
 
+
 # --- Email Searching Sub-Menu ---
-def email_harper(): # Renamed to avoid conflict if you have a general 'email' function
+def email_harper():  # Renamed to avoid conflict if you have a general 'email' function
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                             Email Searching                                 ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(
+        Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
     print(Fore.BLUE + '''
     [1] Search for Emails by Name/Domain (OFF)
     [2] Validate Email Address (OFF)
@@ -288,7 +357,8 @@ def email_harper(): # Renamed to avoid conflict if you have a general 'email' fu
     ''')
     print('\r')
     try:
-        choice = input(Fore.RED + "email_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        choice = input(
+            Fore.RED + "email_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
         print('\r')
         if choice in ["1", "2", "3"]:
             print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
@@ -304,12 +374,14 @@ def email_harper(): # Renamed to avoid conflict if you have a general 'email' fu
         print('\n')
         sys.exit()
 
+
 # --- Web Analyzer Sub-Menu ---
 def web_scrap():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                               Web Analyzer                                  ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(
+        Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
     print(Fore.BLUE + '''
     [1] Website Information (Whois, Technologies) (OFF)
     [2] Web Scraper (Custom Rules) (OFF)
@@ -319,7 +391,8 @@ def web_scrap():
     ''')
     print('\r')
     try:
-        choice = input(Fore.RED + "web_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        choice = input(
+            Fore.RED + "web_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
         print('\r')
         if choice in ["1", "2", "3"]:
             print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
@@ -335,12 +408,14 @@ def web_scrap():
         print('\n')
         sys.exit()
 
+
 # --- Meta-data Analyzer Sub-Menu ---
 def meta_scan():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                           Meta-data Analyzer                                ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(
+        Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
     print(Fore.BLUE + '''
     [1] Analyze File Meta-data (EXIF, PDF, DOCX) (OFF)
     [2] Extract Meta-data from URL/Image (OFF)
@@ -349,7 +424,8 @@ def meta_scan():
     ''')
     print('\r')
     try:
-        choice = input(Fore.RED + "meta_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        choice = input(
+            Fore.RED + "meta_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
         print('\r')
         if choice in ["1", "2"]:
             print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
@@ -452,6 +528,7 @@ def menu_cracking():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to cracking menu...')
 
+
 # Submenu definitions
 def password_submenu():
     while True:
@@ -473,6 +550,7 @@ def password_submenu():
         else:
             print("Invalid choice.")
 
+
 def software_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -492,6 +570,7 @@ def software_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
+
 
 def network_submenu():
     while True:
@@ -513,6 +592,7 @@ def network_submenu():
         else:
             print("Invalid choice.")
 
+
 def system_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -532,6 +612,7 @@ def system_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
+
 
 def web_submenu():
     while True:
@@ -553,6 +634,7 @@ def web_submenu():
         else:
             print("Invalid choice.")
 
+
 def crypto_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -572,6 +654,7 @@ def crypto_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
+
 
 ## Scripting menu settings
 def menu_scripting():
@@ -620,6 +703,7 @@ def menu_scripting():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to scripting menu...')
 
+
 def system_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -639,6 +723,7 @@ def system_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
+
 
 def web_scripting_submenu():
     while True:
@@ -660,6 +745,7 @@ def web_scripting_submenu():
         else:
             print("Invalid choice.")
 
+
 def network_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -679,6 +765,7 @@ def network_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
+
 
 def automation_scripting_submenu():
     while True:
@@ -1756,4 +1843,115 @@ def phishing_submenu():
         else:
             print("Invalid choice.")
 
+
+# --- Sign-Up Menu ---
+def signup_menu():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                                  SIGN UP                                    ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.BLUE + '''
+    Create your new user account.
+
+    [99] Back to Main Menu
+    ''')
+    print('\r')
+
+    try:
+        new_username = input(Fore.RED + "new_id" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+
+        if new_username == "99":
+            print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
+            return main_menu()
+
+        if new_username in USERS:
+            print(Fore.RED + "  Username already exists. Please choose a different one." + Style.RESET_ALL)
+            input('  Press Enter to continue...')
+            signup_menu()
+            return
+
+        new_password = getpass.getpass(Fore.RED + "new_password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        confirm_password = getpass.getpass(Fore.RED + "confirm_password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+
+        if new_password == confirm_password:
+            USERS[new_username] = new_password
+            save_users() # <--- IMPORTANT: Save users after creating a new account
+            print(Fore.GREEN + f"  Account for '{new_username}' created successfully!" + Style.RESET_ALL)
+            input('  Press Enter to continue...')
+            return main_menu()
+        else:
+            print(Fore.RED + "  Passwords do not match. Please try again." + Style.RESET_ALL)
+            input('  Press Enter to continue...')
+            signup_menu()
+
+    except KeyboardInterrupt:
+        print('\n' + Fore.YELLOW + "  Sign-up cancelled. Exiting." + Style.RESET_ALL)
+        sys.exit()
+
+# --- Login Menu ---
+def login_menu():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                                   LOGIN                                     ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.BLUE + '''
+    Enter your credentials to log in.
+
+    [99] Back to Main Menu
+    ''')
+    print('\r')
+
+    try:
+        username = input(Fore.RED + "id" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+
+        if username == "99":
+            print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
+            return start_app()
+
+        password = getpass.getpass(Fore.RED + "password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+
+        if username in USERS and USERS[username] == password:
+            print(Fore.GREEN + f"  Login successful! Welcome, {username}." + Style.RESET_ALL)
+            andro_menu()
+        else:
+            print(Fore.RED + "  Invalid username or password. Please try again." + Style.RESET_ALL)
+            input('  Press Enter to continue...')
+            login_menu()
+
+    except KeyboardInterrupt:
+        print('\n' + Fore.YELLOW + "  Login cancelled. Exiting." + Style.RESET_ALL)
+        sys.exit()
+
+# --- Main Application Start ---
+def start_app():
+    load_users() # <--- IMPORTANT: Load users when the app starts
+    while True:
+        print(Fore.WHITE + '------------------------------------------------------------------------------')
+        print(Fore.WHITE + '                            ANDROMEDA AUTHENTICATION SYSTEM                             ')
+        print(Fore.WHITE + '------------------------------------------------------------------------------')
+        print(Fore.BLUE + '''
+        [1] Sign Up (Create New Account)
+        [2] Login (Access Your Account)
+
+        [99] Exit Application
+        ''')
+        print('\r')
+        try:
+            choice = input(Fore.RED + "Andromeda" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Authentication" + Fore.RESET + "~$ ")
+            print('\r')
+
+            if choice == "1":
+                signup_menu()
+            elif choice == "2":
+                login_menu()
+            elif choice == "99":
+                print(Fore.YELLOW + "Exiting Andromeda. Goodbye!" + Style.RESET_ALL)
+                sys.exit()
+            else:
+                print(Fore.RED + "  Invalid choice. Please select 1, 2, or 99." + Style.RESET_ALL)
+                input('  Press Enter to continue...')
+        except KeyboardInterrupt:
+            print('\n' + Fore.YELLOW + "  Application terminated." + Style.RESET_ALL)
+if __name__ == "__main__":
+    start_app()
 andro_menu()
