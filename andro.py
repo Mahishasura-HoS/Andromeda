@@ -36,6 +36,8 @@ def load_users():
             with open(USER_DATA_FILE, 'r') as f:
                 USERS = json.load(f)
             print(Fore.GREEN + f"  Successfully loaded user data from '{USER_DATA_FILE}'." + Style.RESET_ALL)
+
+
         except json.JSONDecodeError:
             print(Fore.RED + f"  Error decoding JSON from '{USER_DATA_FILE}'. Starting with empty users." + Style.RESET_ALL)
             USERS = {}
@@ -90,7 +92,7 @@ def andro_menu():
     print(Fore.WHITE + '                                 MENU                                           ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.BLUE + '''
-       [1] Osint                     [5] Steganography     
+       [1] Osint                     [5] Steganography           
        [2] Forensic                  [6] Misc
        [3] Cracking                  [7] Reverse 
        [4] Scripting                 [8] Web 
@@ -160,6 +162,7 @@ def menu_osint():
     [2] Phone Directory           [5] Web Analyzer     --OFF--
     [3] IP Information            [6] Meta-data Analyzer --OFF--     
 
+    [90] Save 
     [99] Main menu      
      ''')
     print('\r')
@@ -188,6 +191,9 @@ def menu_osint():
             menu_osint()
         elif choice == "6":
             meta_scan()
+            input('enter to main menu')
+        elif choice == "90":
+            save_data()
             input('enter to main menu')
             menu_osint()
         elif choice == "99":
@@ -1857,7 +1863,7 @@ def signup_menu():
     print('\r')
 
     try:
-        new_username = input(Fore.RED + "new_id" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        new_username = input(Fore.RED + "Set your new ID :")
 
         if new_username == "99":
             print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
@@ -1869,8 +1875,8 @@ def signup_menu():
             signup_menu()
             return
 
-        new_password = getpass.getpass(Fore.RED + "new_password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
-        confirm_password = getpass.getpass(Fore.RED + "confirm_password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        new_password = getpass.getpass(Fore.RED + "New password :" )
+        confirm_password = getpass.getpass(Fore.RED + "Confirm password :" )
         print('\r')
 
         if new_password == confirm_password:
@@ -1901,16 +1907,18 @@ def login_menu():
     print('\r')
 
     try:
-        username = input(Fore.RED + "id" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        username = input(Fore.RED + "Your ID : ")
 
         if username == "99":
             print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
             return start_app()
 
-        password = getpass.getpass(Fore.RED + "password" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        password = getpass.getpass(Fore.RED + "Your password : " )
         print('\r')
 
         if username in USERS and USERS[username] == password:
+            os.system('cls' if os.name == 'nt' else 'clear')
+            time.sleep(2)
             print(Fore.GREEN + f"  Login successful! Welcome, {username}." + Style.RESET_ALL)
             andro_menu()
         else:
@@ -1930,8 +1938,8 @@ def start_app():
         print(Fore.WHITE + '                            ANDROMEDA AUTHENTICATION SYSTEM                             ')
         print(Fore.WHITE + '------------------------------------------------------------------------------')
         print(Fore.BLUE + '''
-        [1] Sign Up (Create New Account)
-        [2] Login (Access Your Account)
+        [1] Sign Up 
+        [2] Login 
 
         [99] Exit Application
         ''')
