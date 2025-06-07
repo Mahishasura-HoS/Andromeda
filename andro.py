@@ -35,9 +35,6 @@ def load_users():
         try:
             with open(USER_DATA_FILE, 'r') as f:
                 USERS = json.load(f)
-            print(Fore.GREEN + f"  Successfully loaded user data from '{USER_DATA_FILE}'." + Style.RESET_ALL)
-
-
         except json.JSONDecodeError:
             print(Fore.RED + f"  Error decoding JSON from '{USER_DATA_FILE}'. Starting with empty users." + Style.RESET_ALL)
             USERS = {}
@@ -86,8 +83,7 @@ def andro_menu():
     print(Fore.RED + "   / \\  | \\ | |  _ \\|  _ \\ / _ \\|  \\/  | ____|  _ \\  / \\   ")
     print(Fore.RED + "  / _ \\ |  \\| | | | | |_) | | | | |\\/| |  _| | | | |/ _ \\  ")
     print(Fore.BLUE + " / ___ \\| |\\  | |_| |  _ <| |_| | |  | | |___| |_| / ___ \\ ")
-    print(
-        Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
+    print(Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                 MENU                                           ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -104,7 +100,7 @@ def andro_menu():
     print(Fore.LIGHTBLACK_EX + '''                 Make by TheBloodredEagle - DRF ~ ''' + Fore.WHITE)
     print('------------------------------------------------------------------------------')
     try:
-        choice = input(Fore.RED + "root" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        choice = input(Fore.RED + f'{load_users()}' + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
         print('\r')
         if choice == "1":
             menu_osint()
@@ -139,7 +135,7 @@ def andro_menu():
             input('enter to main menu')
             andro_menu()
         elif choice == "99":
-            print('Exit Andromeda')
+            print(Fore.YELLOW +'Exit Andromeda')
         else:
             print('  incorrect choice ')
             print('\r')
@@ -1899,19 +1895,13 @@ def login_menu():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                   LOGIN                                     ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.BLUE + '''
+    print(Fore.YELLOW + '''
     Enter your credentials to log in.
-
-    [99] Back to Main Menu
     ''')
     print('\r')
 
     try:
         username = input(Fore.RED + "Your ID : ")
-
-        if username == "99":
-            print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
-            return start_app()
 
         password = getpass.getpass(Fore.RED + "Your password : " )
         print('\r')
@@ -1919,7 +1909,12 @@ def login_menu():
         if username in USERS and USERS[username] == password:
             os.system('cls' if os.name == 'nt' else 'clear')
             time.sleep(2)
-            print(Fore.GREEN + f"  Login successful! Welcome, {username}." + Style.RESET_ALL)
+            print(Fore.YELLOW + f"Login successful! Welcome, SIR !" + Style.RESET_ALL)
+            time.sleep(1)
+            print(Fore.YELLOW + f"Set session {username}")
+            time.sleep(1)
+            print(Fore.GREEN + 'Session ready ' + Style.RESET_ALL)
+            time.sleep(2)
             andro_menu()
         else:
             print(Fore.RED + "  Invalid username or password. Please try again." + Style.RESET_ALL)
@@ -1953,7 +1948,7 @@ def start_app():
             elif choice == "2":
                 login_menu()
             elif choice == "99":
-                print(Fore.YELLOW + "Exiting Andromeda. Goodbye!" + Style.RESET_ALL)
+                print(Fore.YELLOW + "Exiting Andromeda,  See you next time!" + Style.RESET_ALL)
                 sys.exit()
             else:
                 print(Fore.RED + "  Invalid choice. Please select 1, 2, or 99." + Style.RESET_ALL)
