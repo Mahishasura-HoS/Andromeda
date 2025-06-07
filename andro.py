@@ -35,7 +35,6 @@ def load_users():
         try:
             with open(USER_DATA_FILE, 'r') as f:
                 USERS = json.load(f)
-            print(Fore.GREEN + f"  Successfully loaded user data from '{USER_DATA_FILE}'." + Style.RESET_ALL)
 
 
         except json.JSONDecodeError:
