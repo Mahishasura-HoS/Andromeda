@@ -1,10 +1,10 @@
 from colorama import Fore, Style
-import getpass
+import sys
+from Modules import *
 import os
 import time
-import json  # To save and load user data
 print(Fore.GREEN +'''Modules loaded successfully!''')
-time.sleep(6)
+time.sleep(3)
 print(Fore.RED +'''Please wait, Andromeda will launch !''')
 time.sleep(2)
 
@@ -25,7 +25,7 @@ def andro_menu():
     print(Fore.RED + "   / \\  | \\ | |  _ \\|  _ \\ / _ \\|  \\/  | ____|  _ \\  / \\   ")
     print(Fore.RED + "  / _ \\ |  \\| | | | | |_) | | | | |\\/| |  _| | | | |/ _ \\  ")
     print(Fore.BLUE + " / ___ \\| |\\  | |_| |  _ <| |_| | |  | | |___| |_| / ___ \\ ")
-    print(Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0.1" + Style.RESET_ALL)
+    print(Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                 MENU                                           ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -34,10 +34,12 @@ def andro_menu():
        [2] Forensic                  [6] Misc
        [3] Cracking                  [7] Reverse 
        [4] Scripting                 [8] Web 
+       
+       [99] Exit
         ''')
     print(Fore.WHITE)
     print('------------------------------------------------------------------------------')
-    print(Fore.LIGHTBLACK_EX + '''                 Make by Ake AshK"3NaZz TBE ~ ''' + Fore.WHITE)
+    print(Fore.LIGHTBLACK_EX + '''                 Make by TheBloodredEagle - DRF ~ ''' + Fore.WHITE)
     print('------------------------------------------------------------------------------')
     try:
         choice = input(Fore.RED + "root" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
@@ -74,6 +76,8 @@ def andro_menu():
             menu_web()
             input('enter to main menu')
             andro_menu()
+        elif choice == "99":
+            print('Exit Andromeda')
         else:
             print('  incorrect choice ')
             print('\r')
@@ -131,6 +135,232 @@ def menu_osint():
             print('\r')
             input('enter to main menu ...')
             andro_menu()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+# --- Name Searching Sub-Menu ---
+def name_search():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                              Name Searching                                 ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.BLUE + '''
+    [1] Search Public Records
+    [2] Search Social Media
+    [3] Search Professional Networks
+    [4] Custom Name Search Query
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "name_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice == "1":
+            print("  Performing Public Records Search...")
+            # Add your public records search logic here
+            input('Press Enter to continue...')
+            name_search()
+        elif choice == "2":
+            print("  Performing Social Media Search...")
+            # Add your social media search logic here
+            input('Press Enter to continue...')
+            name_search()
+        elif choice == "3":
+            print("  Performing Professional Networks Search...")
+            # Add your professional networks search logic here
+            input('Press Enter to continue...')
+            name_search()
+        elif choice == "4":
+            query = input(Fore.CYAN + "  Enter custom name search query: " + Style.RESET_ALL)
+            print(f"  Searching for: {query}...")
+            # Add your custom name search logic here
+            input('Press Enter to continue...')
+            name_search()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            name_search()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+
+# --- Phone Directory Sub-Menu ---
+def phone():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                             Phone Directory                                 ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.BLUE + '''
+    [1] Reverse Phone Lookup
+    [2] Phone Number Information (Carrier, Location)
+    [3] Search for Phone Numbers by Name/Address
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "phone_dir" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice == "1":
+            phone_num = input(Fore.CYAN + "  Enter phone number for reverse lookup: " + Style.RESET_ALL)
+            print(f"  Performing reverse lookup for {phone_num}...")
+            # Add your reverse phone lookup logic here
+            input('Press Enter to continue...')
+            phone()
+        elif choice == "2":
+            phone_num = input(Fore.CYAN + "  Enter phone number for information: " + Style.RESET_ALL)
+            print(f"  Retrieving info for {phone_num}...")
+            # Add your phone info logic here
+            input('Press Enter to continue...')
+            phone()
+        elif choice == "3":
+            name_addr = input(Fore.CYAN + "  Enter name/address to search for phone numbers: " + Style.RESET_ALL)
+            print(f"  Searching for phone numbers related to {name_addr}...")
+            # Add your phone number search by name/address logic here
+            input('Press Enter to continue...')
+            phone()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            phone()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+
+# --- IP Information Sub-Menu ---
+def ip():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                               IP Information                                ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.BLUE + '''
+    [1] Get My IP Information
+    [2] Lookup IP Address Details
+    [3] IP Range Scan
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "ip_info" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice == "1":
+            print("  Retrieving your IP information...")
+            # Add logic to get your own IP details
+            input('Press Enter to continue...')
+            ip()
+        elif choice == "2":
+            ip_addr = input(Fore.CYAN + "  Enter IP address to lookup: " + Style.RESET_ALL)
+            print(f"  Looking up details for IP: {ip_addr}...")
+            # Add IP lookup logic here
+            input('Press Enter to continue...')
+            ip()
+        elif choice == "3":
+            ip_range = input(Fore.CYAN + "  Enter IP range (e.g., 192.168.1.0/24): " + Style.RESET_ALL)
+            print(f"  Scanning IP range: {ip_range}...")
+            # Add IP range scan logic here
+            input('Press Enter to continue...')
+            ip()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            ip()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+
+# --- Email Searching Sub-Menu ---
+def email_harper(): # Renamed to avoid conflict if you have a general 'email' function
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                             Email Searching                                 ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(Fore.BLUE + '''
+    [1] Search for Emails by Name/Domain (OFF)
+    [2] Validate Email Address (OFF)
+    [3] Breach Data Search by Email (OFF)
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "email_search" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice in ["1", "2", "3"]:
+            print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
+            input('Press Enter to continue...')
+            email_harper()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            email_harper()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+
+# --- Web Analyzer Sub-Menu ---
+def web_scrap():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                               Web Analyzer                                  ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(Fore.BLUE + '''
+    [1] Website Information (Whois, Technologies) (OFF)
+    [2] Web Scraper (Custom Rules) (OFF)
+    [3] Broken Link Checker (OFF)
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "web_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice in ["1", "2", "3"]:
+            print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
+            input('Press Enter to continue...')
+            web_scrap()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            web_scrap()
+    except KeyboardInterrupt:
+        print('\n')
+        sys.exit()
+
+# --- Meta-data Analyzer Sub-Menu ---
+def meta_scan():
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.WHITE + '                           Meta-data Analyzer                                ')
+    print(Fore.WHITE + '------------------------------------------------------------------------------')
+    print(Fore.YELLOW + '         Note: This feature is currently OFF/Under Development.             ' + Style.RESET_ALL)
+    print(Fore.BLUE + '''
+    [1] Analyze File Meta-data (EXIF, PDF, DOCX) (OFF)
+    [2] Extract Meta-data from URL/Image (OFF)
+
+    [99] Back to OSINT Menu
+    ''')
+    print('\r')
+    try:
+        choice = input(Fore.RED + "meta_analyzer" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
+        print('\r')
+        if choice in ["1", "2"]:
+            print(Fore.YELLOW + "  This feature is currently OFF. Please wait for future updates." + Style.RESET_ALL)
+            input('Press Enter to continue...')
+            meta_scan()
+        elif choice == "99":
+            return menu_osint()
+        else:
+            print('  Incorrect choice. Please try again.')
+            input('Press Enter to continue...')
+            meta_scan()
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
