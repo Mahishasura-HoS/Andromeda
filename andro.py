@@ -1,6 +1,7 @@
 from colorama import Fore, Style
 import sys
-from Modules import *
+
+sys.path.append("Modules")
 import os
 import sys
 import json
@@ -92,8 +93,9 @@ def andro_menu():
        [2] Forensic                  [6] Misc
        [3] Cracking                  [7] Reverse 
        [4] Scripting                 [8] Web 
-
-       [99] Exit
+       
+       [99] Save
+       [00] Exit
         ''')
     print(Fore.WHITE)
     print('------------------------------------------------------------------------------')
@@ -135,6 +137,10 @@ def andro_menu():
             input('enter to main menu')
             andro_menu()
         elif choice == "99":
+            backup_db()
+            input('  Press Enter to return to main menu...')
+            andro_menu()  # Call andro_menu to redraw it after backup
+        elif choice == "00":
             print(Fore.YELLOW +'Exit Andromeda')
         else:
             print('  incorrect choice ')
@@ -1935,6 +1941,7 @@ def start_app():
         print(Fore.BLUE + '''
         [1] Sign Up 
         [2] Login 
+        [3] Create Data Base
 
         [99] Exit Application
         ''')
@@ -1947,6 +1954,9 @@ def start_app():
                 signup_menu()
             elif choice == "2":
                 login_menu()
+            elif choice == "3":
+           #    from Modules import
+           #    db_management_menu()
             elif choice == "99":
                 print(Fore.YELLOW + "Exiting Andromeda,  See you next time!" + Style.RESET_ALL)
                 sys.exit()
