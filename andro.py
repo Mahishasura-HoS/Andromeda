@@ -9,7 +9,7 @@ import getpass
 import time
 
 # --- Configuration for User Data File and Session File ---
-USER_DATA_FILE = 'users.json' # Stores user credentials
+USER_DATA_FILE = 'Configuration files/users.json'  # Stores user credentials
 SESSION_FILE = 'andromeda_session.json' # Stores login state (e.g., a simple flag)
 
 # --- Global User Database (Loaded from/Saved to JSON) ---
