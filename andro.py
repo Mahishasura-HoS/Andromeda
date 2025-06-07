@@ -19,15 +19,6 @@ time.sleep(3)
 print(Fore.RED +'''Please wait, Andromeda will launch !''')
 time.sleep(2)
 
-print(Fore.RED + '''
-██╗    ██╗███████╗██╗      ██████╗ ██████╗ ███╗   ███╗███████╗
-██║    ██║██╔════╝██║     ██╔════╝██╔═══██╗████╗ ████║██╔════╝
-██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
-██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
-╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
- ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ TO
-''')
-
 def load_users():
     """Loads user data from the JSON file."""
     global USERS
@@ -35,7 +26,6 @@ def load_users():
         try:
             with open(USER_DATA_FILE, 'r') as f:
                 USERS = json.load(f)
-
 
         except json.JSONDecodeError:
             print(Fore.RED + f"  Error decoding JSON from '{USER_DATA_FILE}'. Starting with empty users." + Style.RESET_ALL)
