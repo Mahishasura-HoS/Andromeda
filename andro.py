@@ -1,13 +1,14 @@
 from colorama import Fore, Style
 import sys
-
-sys.path.append("Modules")
+sys.path.append('Modules/TOOLS')
+sys.path.append('Modules/DATABASE')
 import os
 import sys
 import json
 from colorama import Fore, Style
 import getpass
 import time
+
 
 # --- Configuration for User Data File and Session File ---
 USER_DATA_FILE = 'Configuration files/users.json'  # Stores user credentials
@@ -94,8 +95,8 @@ def andro_menu():
        [3] Cracking                  [7] Reverse 
        [4] Scripting                 [8] Web 
        
-       [99] Save
-       [00] Exit
+       [99] Save                     [00] Exit
+       
         ''')
     print(Fore.WHITE)
     print('------------------------------------------------------------------------------')
@@ -137,7 +138,7 @@ def andro_menu():
             input('enter to main menu')
             andro_menu()
         elif choice == "99":
-            backup_db()
+            backup_database()
             input('  Press Enter to return to main menu...')
             andro_menu()  # Call andro_menu to redraw it after backup
         elif choice == "00":
@@ -1947,6 +1948,7 @@ def start_app():
         ''')
         print('\r')
         try:
+
             choice = input(Fore.RED + "Andromeda" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Authentication" + Fore.RESET + "~$ ")
             print('\r')
 
@@ -1955,8 +1957,7 @@ def start_app():
             elif choice == "2":
                 login_menu()
             elif choice == "3":
-           #    from Modules import
-           #    db_management_menu()
+                db_management_menu()
             elif choice == "99":
                 print(Fore.YELLOW + "Exiting Andromeda,  See you next time!" + Style.RESET_ALL)
                 sys.exit()
