@@ -1,13 +1,14 @@
-from colorama import Fore, Style
-import sys
-sys.path.append('Modules/TOOLS')
-sys.path.append('Modules/DATABASE')
 import os
 import sys
 import json
 from colorama import Fore, Style
 import getpass
 import time
+
+from Modules.TOOLS.Menu.forensic_menu import forensic_analysis_menu
+
+sys.path.append('Modules/TOOLS/*')
+sys.path.append('Modules/DATABASE/*')
 
 
 # --- Configuration for User Data File and Session File ---
@@ -27,7 +28,7 @@ print(Fore.RED + '''
 ██║ █╗ ██║█████╗  ██║     ██║     ██║   ██║██╔████╔██║█████╗  
 ██║███╗██║██╔══╝  ██║     ██║     ██║   ██║██║╚██╔╝██║██╔══╝  
 ╚███╔███╔╝███████╗███████╗╚██████╗╚██████╔╝██║ ╚═╝ ██║███████╗
- ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ TO
+ ╚══╝╚══╝ ╚══════╝╚══════╝ ╚═════╝ ╚═════╝ ╚═╝     ╚═╝╚══════╝ 
 ''')
 
 def load_users():
@@ -83,9 +84,9 @@ time.sleep(2)
 def andro_menu():
     print(Fore.RED + "    _    _   _ ____  ____   ___  __  __ _____ ____    _    ")
     print(Fore.RED + "   / \\  | \\ | |  _ \\|  _ \\ / _ \\|  \\/  | ____|  _ \\  / \\   ")
-    print(Fore.RED + "  / _ \\ |  \\| | | | | |_) | | | | |\\/| |  _| | | | |/ _ \\  ")
+    print(Fore.BLUE + "  / _ \\ |  \\| | | | | |_) | | | | |\\/| |  _| | | | |/ _ \\  ")
     print(Fore.BLUE + " / ___ \\| |\\  | |_| |  _ <| |_| | |  | | |___| |_| / ___ \\ ")
-    print(Fore.BLUE + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
+    print(Fore.BLACK + "/_/   \\_\\_| \\_|____/|_| \\_\\\\___/|_|  |_|_____|____/_/   \\_\\ Framework v0a" + Style.RESET_ALL)
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                 MENU                                           ')
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -110,7 +111,7 @@ def andro_menu():
             input('enter to main menu ...')
             andro_menu()
         elif choice == "2":
-            menu_forensic()
+            forensic_analysis_menu()
             input('enter to main menu ...')
             andro_menu()
         elif choice == "3":
@@ -155,7 +156,6 @@ def andro_menu():
 
 ## Menu settings
 # OSINT menu
-
 def menu_osint():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
     print(Fore.WHITE + '                                    OSINT                                                ')
@@ -210,7 +210,6 @@ def menu_osint():
         print('\n')
         sys.exit()
 
-
 # --- Name Searching Sub-Menu ---
 def name_search():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -260,7 +259,6 @@ def name_search():
         print('\n')
         sys.exit()
 
-
 # --- Phone Directory Sub-Menu ---
 def phone():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -271,7 +269,7 @@ def phone():
     [2] Phone Number Information (Carrier, Location)
     [3] Search for Phone Numbers by Name/Address
 
-    [99] Back to OSINT Menu
+    [99] Back to Osint Menu
     ''')
     print('\r')
     try:
@@ -304,7 +302,6 @@ def phone():
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
-
 
 # --- IP Information Sub-Menu ---
 def ip():
@@ -349,7 +346,6 @@ def ip():
         print('\n')
         sys.exit()
 
-
 # --- Email Searching Sub-Menu ---
 def email_harper():  # Renamed to avoid conflict if you have a general 'email' function
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -382,7 +378,6 @@ def email_harper():  # Renamed to avoid conflict if you have a general 'email' f
     except KeyboardInterrupt:
         print('\n')
         sys.exit()
-
 
 # --- Web Analyzer Sub-Menu ---
 def web_scrap():
@@ -417,7 +412,6 @@ def web_scrap():
         print('\n')
         sys.exit()
 
-
 # --- Meta-data Analyzer Sub-Menu ---
 def meta_scan():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -450,55 +444,13 @@ def meta_scan():
         print('\n')
         sys.exit()
 
-
-# Forensic menu settings
-
-def menu_forensic():
-    print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.WHITE + '                                  FORENSIC                                                ')
-    print(Fore.WHITE + '------------------------------------------------------------------------------')
-    print(Fore.BLUE + '''
-            [1] MIG                       [4] TSK (The Sleuth Kit)
-            [2] GRR                       [5] Caine
-            [3] Volatility                [6] Bulk Extractor
-
-
-            [99] Main menu
-     ''')
-    print('\r')
-    try:
-        choice = input(Fore.RED + "forensic" + Fore.LIGHTWHITE_EX + "@" + Fore.RED + "Andromeda" + Fore.RESET + "~$ ")
-        print('\r')
-        if choice == "1":
-            mig()
-            input('enter to main menu ...')
-            menu_forensic()
-        elif choice == "2":
-            grr()
-            input('enter to main menu ...')
-            menu_forensic()
-        elif choice == "3":
-            vol()
-            input('enter to main menu')
-            menu_forensic()
-        elif choice == "99":
-            return andro_menu()
-        else:
-            print('  incorrect choice ')
-            print('\r')
-            input('enter to main menu ...')
-            andro_menu()
-    except KeyboardInterrupt:
-        print('\n')
-        sys.exit()
-
+#
 
 # Crypto menu
 def menu_cracking():
     while True:
         print(Fore.WHITE + '------------------------------------------------------------------------------')
-        print(
-            Fore.WHITE + '                                    Cracking                                               ')
+        print(Fore.WHITE + '                                    Cracking                                               ')
         print(Fore.WHITE + '------------------------------------------------------------------------------')
 
         print(Fore.BLUE + '''
@@ -537,7 +489,6 @@ def menu_cracking():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to cracking menu...')
 
-
 # Submenu definitions
 def password_submenu():
     while True:
@@ -559,7 +510,6 @@ def password_submenu():
         else:
             print("Invalid choice.")
 
-
 def software_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -579,7 +529,6 @@ def software_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
-
 
 def network_submenu():
     while True:
@@ -601,7 +550,6 @@ def network_submenu():
         else:
             print("Invalid choice.")
 
-
 def system_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -621,7 +569,6 @@ def system_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
-
 
 def web_submenu():
     while True:
@@ -643,7 +590,6 @@ def web_submenu():
         else:
             print("Invalid choice.")
 
-
 def crypto_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -663,7 +609,6 @@ def crypto_submenu():
             return menu_cracking()
         else:
             print("Invalid choice.")
-
 
 ## Scripting menu settings
 def menu_scripting():
@@ -712,7 +657,6 @@ def menu_scripting():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to scripting menu...')
 
-
 def system_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -732,7 +676,6 @@ def system_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
-
 
 def web_scripting_submenu():
     while True:
@@ -754,7 +697,6 @@ def web_scripting_submenu():
         else:
             print("Invalid choice.")
 
-
 def network_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -774,7 +716,6 @@ def network_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
-
 
 def automation_scripting_submenu():
     while True:
@@ -796,7 +737,6 @@ def automation_scripting_submenu():
         else:
             print("Invalid choice.")
 
-
 def security_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -816,7 +756,6 @@ def security_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
-
 
 def game_scripting_submenu():
     while True:
@@ -838,7 +777,6 @@ def game_scripting_submenu():
         else:
             print("Invalid choice.")
 
-
 def data_scripting_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -858,7 +796,6 @@ def data_scripting_submenu():
             return menu_scripting()
         else:
             print("Invalid choice.")
-
 
 def application_scripting_submenu():
     while True:
@@ -880,14 +817,12 @@ def application_scripting_submenu():
         else:
             print("Invalid choice.")
 
-
 ## Steganography menu settings
 ## Stegano submenu settings
 def menu_stega():
     while True:
         print(Fore.WHITE + '------------------------------------------------------------------------------')
-        print(
-            Fore.WHITE + '                                   Steganography                                             ')
+        print(Fore.WHITE + '                                   Steganography                                             ')
         print(Fore.WHITE + '------------------------------------------------------------------------------')
         print(Fore.BLUE + '''
         [1] Images                    [4] Text
@@ -925,7 +860,6 @@ def menu_stega():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to steganography menu...')
 
-
 def image_stega_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -945,7 +879,6 @@ def image_stega_submenu():
             return
         else:
             print("Invalid choice.")
-
 
 def audio_stega_submenu():
     while True:
@@ -967,7 +900,6 @@ def audio_stega_submenu():
         else:
             print("Invalid choice.")
 
-
 def video_stega_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -987,7 +919,6 @@ def video_stega_submenu():
             return menu_stega()
         else:
             print("Invalid choice.")
-
 
 def text_stega_submenu():
     while True:
@@ -1009,7 +940,6 @@ def text_stega_submenu():
         else:
             print("Invalid choice.")
 
-
 def network_stega_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1029,7 +959,6 @@ def network_stega_submenu():
             return menu_stega()
         else:
             print("Invalid choice.")
-
 
 def filesystem_stega_submenu():
     while True:
@@ -1051,9 +980,7 @@ def filesystem_stega_submenu():
         else:
             print("Invalid choice.")
 
-
 ## Misc menu settings
-
 def menu_misc():
     while True:
         print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -1104,7 +1031,6 @@ def menu_misc():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to misc menu...')
 
-
 def file_manipulation_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1124,7 +1050,6 @@ def file_manipulation_submenu():
             return menu_misc()
         else:
             print("Invalid choice.")
-
 
 def data_conversion_submenu():
     while True:
@@ -1146,7 +1071,6 @@ def data_conversion_submenu():
         else:
             print("Invalid choice.")
 
-
 def system_utilities_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1166,7 +1090,6 @@ def system_utilities_submenu():
             return menu_misc()
         else:
             print("Invalid choice.")
-
 
 def text_processing_submenu():
     while True:
@@ -1188,7 +1111,6 @@ def text_processing_submenu():
         else:
             print("Invalid choice.")
 
-
 def web_scraping_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1208,7 +1130,6 @@ def web_scraping_submenu():
             return menu_misc()
         else:
             print("Invalid choice.")
-
 
 def hardware_interaction_submenu():
     while True:
@@ -1230,7 +1151,6 @@ def hardware_interaction_submenu():
         else:
             print("Invalid choice.")
 
-
 def encoding_decoding_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1250,7 +1170,6 @@ def encoding_decoding_submenu():
             return menu_misc()
         else:
             print("Invalid choice.")
-
 
 def randomization_submenu():
     while True:
@@ -1272,7 +1191,6 @@ def randomization_submenu():
         else:
             print("Invalid choice.")
 
-
 def math_tools_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1292,7 +1210,6 @@ def math_tools_submenu():
             return menu_misc()
         else:
             print("Invalid choice.")
-
 
 def automation_tools_submenu():
     while True:
@@ -1314,9 +1231,7 @@ def automation_tools_submenu():
         else:
             print("Invalid choice.")
 
-
 ## Reverse menu settings
-
 def menu_reverse():
     while True:
         print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -1364,7 +1279,6 @@ def menu_reverse():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to reverse menu...')
 
-
 def software_reverse_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1382,7 +1296,6 @@ def software_reverse_submenu():
             return menu_reverse()
         else:
             print("Invalid choice.")
-
 
 def hardware_reverse_submenu():
     while True:
@@ -1402,7 +1315,6 @@ def hardware_reverse_submenu():
         else:
             print("Invalid choice.")
 
-
 def network_protocol_reverse_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1420,7 +1332,6 @@ def network_protocol_reverse_submenu():
             return menu_reverse()
         else:
             print("Invalid choice.")
-
 
 def malware_reverse_submenu():
     while True:
@@ -1440,7 +1351,6 @@ def malware_reverse_submenu():
         else:
             print("Invalid choice.")
 
-
 def game_reverse_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1458,7 +1368,6 @@ def game_reverse_submenu():
             return menu_reverse()
         else:
             print("Invalid choice.")
-
 
 def firmware_reverse_submenu():
     while True:
@@ -1478,7 +1387,6 @@ def firmware_reverse_submenu():
         else:
             print("Invalid choice.")
 
-
 def mobile_application_reverse_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1496,7 +1404,6 @@ def mobile_application_reverse_submenu():
             return menu_reverse()
         else:
             print("Invalid choice.")
-
 
 def web_application_reverse_submenu():
     while True:
@@ -1516,9 +1423,7 @@ def web_application_reverse_submenu():
         else:
             print("Invalid choice.")
 
-
 ## Web menu settings
-
 def menu_web():
     while True:
         print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -1579,7 +1484,6 @@ def menu_web():
             print(Fore.YELLOW + "Invalid input. Please enter a number." + Style.RESET_ALL)
             input('Press Enter to return to web menu...')
 
-
 def sql_injection_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1599,7 +1503,6 @@ def sql_injection_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def xss_submenu():
     while True:
@@ -1621,7 +1524,6 @@ def xss_submenu():
         else:
             print("Invalid choice.")
 
-
 def csrf_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1641,7 +1543,6 @@ def csrf_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def authentication_attacks_submenu():
     while True:
@@ -1663,7 +1564,6 @@ def authentication_attacks_submenu():
         else:
             print("Invalid choice.")
 
-
 def session_hijacking_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1683,7 +1583,6 @@ def session_hijacking_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def dos_ddos_submenu():
     while True:
@@ -1705,7 +1604,6 @@ def dos_ddos_submenu():
         else:
             print("Invalid choice.")
 
-
 def file_inclusion_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1722,7 +1620,6 @@ def file_inclusion_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def directory_traversal_submenu():
     while True:
@@ -1741,7 +1638,6 @@ def directory_traversal_submenu():
         else:
             print("Invalid choice.")
 
-
 def rce_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1758,7 +1654,6 @@ def rce_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def web_shells_submenu():
     while True:
@@ -1777,7 +1672,6 @@ def web_shells_submenu():
         else:
             print("Invalid choice.")
 
-
 def clickjacking_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1794,7 +1688,6 @@ def clickjacking_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def mitm_attacks_submenu():
     while True:
@@ -1816,7 +1709,6 @@ def mitm_attacks_submenu():
         else:
             print("Invalid choice.")
 
-
 def web_defacement_submenu():
     while True:
         print(Fore.BLUE + '''
@@ -1833,7 +1725,6 @@ def web_defacement_submenu():
             return menu_web()
         else:
             print("Invalid choice.")
-
 
 def phishing_submenu():
     while True:
@@ -1852,7 +1743,6 @@ def phishing_submenu():
         else:
             print("Invalid choice.")
 
-
 # --- Sign-Up Menu ---
 def signup_menu():
     print(Fore.WHITE + '------------------------------------------------------------------------------')
@@ -1870,7 +1760,7 @@ def signup_menu():
 
         if new_username == "99":
             print(Fore.YELLOW + "Returning to Main Menu." + Style.RESET_ALL)
-            return main_menu()
+            return start_app()
 
         if new_username in USERS:
             print(Fore.RED + "  Username already exists. Please choose a different one." + Style.RESET_ALL)
@@ -1887,7 +1777,7 @@ def signup_menu():
             save_users() # <--- IMPORTANT: Save users after creating a new account
             print(Fore.GREEN + f"  Account for '{new_username}' created successfully!" + Style.RESET_ALL)
             input('  Press Enter to continue...')
-            return main_menu()
+            return start_app()
         else:
             print(Fore.RED + "  Passwords do not match. Please try again." + Style.RESET_ALL)
             input('  Press Enter to continue...')
@@ -1956,8 +1846,9 @@ def start_app():
                 signup_menu()
             elif choice == "2":
                 login_menu()
-            elif choice == "3":
-                db_management_menu()
+            #elif choice == "3":
+                sys.exit()
+               # db_management_menu()
             elif choice == "99":
                 print(Fore.YELLOW + "Exiting Andromeda,  See you next time!" + Style.RESET_ALL)
                 sys.exit()

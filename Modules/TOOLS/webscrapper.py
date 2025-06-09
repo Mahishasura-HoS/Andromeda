@@ -1,1 +1,0 @@
-def web_scrap():
