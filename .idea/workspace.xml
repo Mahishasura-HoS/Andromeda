@@ -5,30 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="27dbfe5e-71b6-44fd-963d-206b051e7592" name="Changes" comment="dev-2">
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/blk_extract_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/caine_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/mig_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/tsk_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/volatility_set.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Andromeda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Andromeda.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/email_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Menu/osint_menu.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/email_osint_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/ip_infos_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/metadata_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/namesearch_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/phone_dir_set.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Osint/web_analyzer_set.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/data_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/DATABASE/data_utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/aircrack.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/caine_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/emailharvest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/grr_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/hydra.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/john.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/metadata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/mig_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/namesearch.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/phoneinfo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/tracer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/tsk_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/volatily-mainset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/webscrapper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/Forensic/blk_extract_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/blk_extract_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/Forensic/mig_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/mig_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/Forensic/tsk_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/tsk_set.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/Forensic/volatility_set.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/volatility_set.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/andro.py" beforeDir="false" afterPath="$PROJECT_DIR$/andro.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -72,42 +61,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.andro.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.andromeda.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_utils.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.docker.executor&quot;: &quot;Run&quot;,
-    &quot;Python.forensic_menu.executor&quot;: &quot;Run&quot;,
-    &quot;Python.grr_api_client.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.grr_set.executor&quot;: &quot;Run&quot;,
-    &quot;Python.mig_set.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save data.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.volatily-mainset.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xersès/PycharmProjects/Andromeda&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.andro.executor": "Debug",
+    "Python.andromeda.executor": "Run",
+    "Python.blk_extract_set.executor": "Debug",
+    "Python.data_utils.executor": "Debug",
+    "Python.docker.executor": "Run",
+    "Python.email_osint_set.executor": "Debug",
+    "Python.email_set.executor": "Debug",
+    "Python.forensic_menu.executor": "Debug",
+    "Python.grr_api_client.executor": "Debug",
+    "Python.grr_set.executor": "Run",
+    "Python.ip_infos_set.executor": "Debug",
+    "Python.metadata_set.executor": "Debug",
+    "Python.mig_set.executor": "Run",
+    "Python.namesearch_set.executor": "Debug",
+    "Python.osint_menu.executor": "Debug",
+    "Python.save data.executor": "Debug",
+    "Python.volatily-mainset.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev-2",
+    "last_opened_file_path": "C:/Users/Xersès/PycharmProjects/Andromeda",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\DATABASE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\TOOLS\Forensic" />
+      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\OTHERS" />
+      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\TOOLS" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\TOOLS\Forensic" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\TOOLS" />
-      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\DATA BASE" />
-      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda" />
-      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\Tools" />
     </key>
   </component>
   <component name="RunManager">
@@ -134,6 +130,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="osint_menu" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Andromeda" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Modules/TOOLS/Menu" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Modules/TOOLS/Menu/osint_menu.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.osint_menu" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -157,7 +181,7 @@
       <workItem from="1749399389669" duration="549000" />
       <workItem from="1749399953946" duration="668000" />
       <workItem from="1749477297732" duration="24000" />
-      <workItem from="1749477518524" duration="972000" />
+      <workItem from="1749477518524" duration="12785000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -255,7 +279,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749388570169</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="dev-2">
+      <option name="closed" value="true" />
+      <created>1749478544923</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749478544923</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -278,15 +310,22 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Andromeda$email_osint_set.coverage" NAME="email_osint_set Coverage Results" MODIFIED="1749489068687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Osint" />
+    <SUITE FILE_PATH="coverage/Andromeda$andro.coverage" NAME="andro Coverage Results" MODIFIED="1749488899275" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Andromeda$andromeda.coverage" NAME="andromeda Coverage Results" MODIFIED="1748509806020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Andromeda-V1a" />
+    <SUITE FILE_PATH="coverage/Andromeda$docker.coverage" NAME="docker Coverage Results" MODIFIED="1749332616296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Andromeda$email_set.coverage" NAME="email_set Coverage Results" MODIFIED="1749481677455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Osint" />
+    <SUITE FILE_PATH="coverage/Andromeda$volatily_mainset.coverage" NAME="volatily-mainset Coverage Results" MODIFIED="1749300247615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules" />
+    <SUITE FILE_PATH="coverage/Andromeda$namesearch_set.coverage" NAME="namesearch_set Coverage Results" MODIFIED="1749485198801" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Osint" />
     <SUITE FILE_PATH="coverage/Andromeda$save_data.coverage" NAME="save data Coverage Results" MODIFIED="1749333249277" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/DATA BASE" />
     <SUITE FILE_PATH="coverage/Andromeda$grr_api_client.coverage" NAME="grr_api_client Coverage Results" MODIFIED="1749394715826" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS" />
-    <SUITE FILE_PATH="coverage/Andromeda$andro.coverage" NAME="andro Coverage Results" MODIFIED="1749478493252" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Andromeda$andromeda.coverage" NAME="andromeda Coverage Results" MODIFIED="1748509806020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../Andromeda-V1a" />
+    <SUITE FILE_PATH="coverage/Andromeda$blk_extract_set.coverage" NAME="blk_extract_set Coverage Results" MODIFIED="1749490187179" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Forensic" />
     <SUITE FILE_PATH="coverage/Andromeda$data_utils.coverage" NAME="data_utils Coverage Results" MODIFIED="1749388992010" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/DATABASE" />
     <SUITE FILE_PATH="coverage/Andromeda$grr_set.coverage" NAME="grr_set Coverage Results" MODIFIED="1749397290094" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS" />
-    <SUITE FILE_PATH="coverage/Andromeda$forensic_menu.coverage" NAME="forensic_menu Coverage Results" MODIFIED="1749400300809" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS" />
-    <SUITE FILE_PATH="coverage/Andromeda$docker.coverage" NAME="docker Coverage Results" MODIFIED="1749332616296" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/Andromeda$volatily_mainset.coverage" NAME="volatily-mainset Coverage Results" MODIFIED="1749300247615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules" />
+    <SUITE FILE_PATH="coverage/Andromeda$ip_infos_set.coverage" NAME="ip_infos_set Coverage Results" MODIFIED="1749483829870" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Osint" />
+    <SUITE FILE_PATH="coverage/Andromeda$forensic_menu.coverage" NAME="forensic_menu Coverage Results" MODIFIED="1749490327207" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Menu" />
+    <SUITE FILE_PATH="coverage/Andromeda$metadata_set.coverage" NAME="metadata_set Coverage Results" MODIFIED="1749482983975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Osint" />
+    <SUITE FILE_PATH="coverage/Andromeda$osint_menu.coverage" NAME="osint_menu Coverage Results" MODIFIED="1749489434089" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Menu" />
     <SUITE FILE_PATH="coverage/Andromeda$mig_set.coverage" NAME="mig_set Coverage Results" MODIFIED="1749399194191" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Modules/TOOLS/Forensic" />
   </component>
 </project>

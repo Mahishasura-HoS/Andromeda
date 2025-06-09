@@ -23,11 +23,11 @@ VOLATILITY_PATH = "vol.py"
 
 # Directory where your memory dump files (.raw, .mem, .vmem, etc.) are stored.
 # The script will automatically create this directory if it doesn't exist.
-MEMORY_DUMPS_DIR = "memory_dumps"
+MEMORY_DUMPS_DIR = "/Modules/Forensic/data/memory_dumps"
 
 # Directory where output from Volatility plugins will be saved.
 # Each plugin's output will be stored in a timestamped file within this directory.
-OUTPUT_DIR = "volatility_output"
+OUTPUT_DIR = "/Modules/Forensic/data/volatility_output"
 
 # Ensure necessary directories exist.
 # os.makedirs creates directories recursively if needed.

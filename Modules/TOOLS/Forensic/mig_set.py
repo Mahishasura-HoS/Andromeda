@@ -22,7 +22,7 @@ MIG_PATH = "mig"  # Assuming 'mig' is in your system's PATH
 
 # Directory where output from MIG commands will be saved.
 # Each command's output will be stored in a timestamped file within this directory.
-OUTPUT_DIR = "mig_output"
+OUTPUT_DIR = "/Modules/Forensic/data/mig_output"
 
 # Ensure the output directory exists.
 os.makedirs(OUTPUT_DIR, exist_ok=True)

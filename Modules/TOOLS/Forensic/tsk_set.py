@@ -19,11 +19,11 @@ TSK_TOOL_PREFIX = ""  # Leave empty if tools are in PATH, otherwise set to the p
 
 # Directory where your disk image files (.dd, .e01, .raw, etc.) are stored.
 # The script will automatically create this directory if it doesn't exist.
-DISK_IMAGES_DIR = "disk_images"
+DISK_IMAGES_DIR = "/Modules/Forensic/data/disk_images"
 
 # Directory where output from TSK commands will be saved.
 # Each command's output will be stored in a timestamped file within this directory.
-OUTPUT_DIR = "tsk_output"
+OUTPUT_DIR = "/Modules/Forensic/data/tsk_output"
 
 # Ensure necessary directories exist.
 os.makedirs(DISK_IMAGES_DIR, exist_ok=True)

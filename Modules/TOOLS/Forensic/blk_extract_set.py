@@ -21,11 +21,11 @@ BULK_EXTRACTOR_PATH = "bulk_extractor"  # Assuming 'bulk_extractor' is in PATH
 
 # Directory where your input files (disk images, files, or folders) are located.
 # The script will automatically create this directory if it doesn't exist.
-INPUT_DATA_DIR = "forensic_data_sources"
+INPUT_DATA_DIR = "/Modules/Forensic/data/forensic_data_sources"
 
 # Directory where Bulk Extractor's output reports will be saved.
 # Each run will get its own timestamped subdirectory within this.
-BULK_EXTRACTOR_OUTPUT_BASE_DIR = "bulk_extractor_reports"
+BULK_EXTRACTOR_OUTPUT_BASE_DIR = "/Modules/Forensic/data/bulk_extractor_reports"
 
 # Ensure necessary directories exist.
 os.makedirs(INPUT_DATA_DIR, exist_ok=True)
