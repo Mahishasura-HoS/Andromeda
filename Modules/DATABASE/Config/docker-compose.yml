@@ -1,0 +1,22 @@
+version: '3.8' # Specify the Docker Compose file format version
+
+services:
+  db: # This is the service name for our database
+    image: postgres:16 # Use the PostgreSQL 16 image
+    container_name: my-postgres-db # Assign a specific name to your container
+    ports:
+      - "5432:5432" # Maps host port 5432 to container port 5432 (PostgreSQL default)
+    environment: # Environment variables for PostgreSQL setup
+      POSTGRES_DB: mydatabase # Your database name
+      POSTGRES_USER: myuser # Your database username
+      POSTGRES_PASSWORD: mypassword # Your database password
+    volumes:
+      # This creates a named volume to persist your database data.
+      # Data will be stored in a Docker-managed volume named 'db_data'.
+      # This is crucial! If you remove the container, your data will still exist.
+      - db_data:/var/lib/postgresql/data
+    restart: unless-stopped # Always restart the container unless manually stopped
+
+# Define the named volumes used by your services
+volumes:
+  db_data: # This declares the 'db_data' named volume
