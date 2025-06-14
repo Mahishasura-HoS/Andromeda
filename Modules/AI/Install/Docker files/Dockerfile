@@ -18,7 +18,7 @@ RUN python -m spacy download fr_core_news_md
 
 # Copie tous les autres fichiers du répertoire local dans le répertoire de travail du conteneur
 # Ceci inclut chatbot_spacy.py et intents.json
-COPY ../.. .
+COPY .. .
 
 # Commande à exécuter quand le conteneur démarre
 # C'est le point d'entrée de ton application
