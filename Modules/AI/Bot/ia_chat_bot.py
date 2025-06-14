@@ -1,6 +1,7 @@
 import json
 import random
 import spacy
+import subprocess
 from datetime import datetime
 
 # Importer les modules scikit-learn nécessaires

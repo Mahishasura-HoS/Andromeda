@@ -4,37 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="27dbfe5e-71b6-44fd-963d-206b051e7592" name="Changes" comment="dev-2">
-      <change afterPath="$PROJECT_DIR$/Modules/AI/Install/Config/Docker files/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/AI/Install/Config/Json files/intents.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/blk_extract_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/caine_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/mig_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/tsk_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Modules/TOOLS/Forensic/volatility_set.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+    <list default="true" id="27dbfe5e-71b6-44fd-963d-206b051e7592" name="Changes" comment="dev3">
+      <change beforePath="$PROJECT_DIR$/.idea/Andromeda.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Andromeda.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/DATABASE/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/backup_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/data_utils.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/docker-compose.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/docker.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/save_data.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/aircrack.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/caine_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/emailharvest.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/grr_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/hydra.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/john.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/metadata.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/mig_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/namesearch.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/phoneinfo.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/tracer.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/tsk_set.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/volatily-mainset.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Modules/TOOLS/webscrapper.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/andro.py" beforeDir="false" afterPath="$PROJECT_DIR$/andro.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/AI/Bot/ia_chat_bot.py" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/AI/Bot/ia_chat_bot.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modules/DATABASE/.env" beforeDir="false" afterPath="$PROJECT_DIR$/Modules/DATABASE/Web Interface/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,43 +54,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.andro.executor": "Debug",
-    "Python.andromeda.executor": "Run",
-    "Python.data_utils.executor": "Debug",
-    "Python.docker.executor": "Run",
-    "Python.forensic_menu.executor": "Run",
-    "Python.grr_api_client.executor": "Debug",
-    "Python.grr_set.executor": "Run",
-    "Python.ia_chat_bot.executor": "Debug",
-    "Python.mig_set.executor": "Run",
-    "Python.save data.executor": "Debug",
-    "Python.volatily-mainset.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "dev-2",
-    "last_opened_file_path": "C:/Users/Xersès/Downloads/Andromeda-dev-2",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.andro.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.andromeda.executor&quot;: &quot;Run&quot;,
+    &quot;Python.data_utils.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.docker.executor&quot;: &quot;Run&quot;,
+    &quot;Python.forensic_menu.executor&quot;: &quot;Run&quot;,
+    &quot;Python.grr_api_client.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.grr_set.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ia_chat_bot.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.mig_set.executor&quot;: &quot;Run&quot;,
+    &quot;Python.save data.executor&quot;: &quot;Debug&quot;,
+    &quot;Python.volatily-mainset.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev-2&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xersès/Downloads/Andromeda-dev-2&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\DATABASE" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\DATABASE\Web Interface" />
+      <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\AI\Install" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\AI\Install\Config\Docker files" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\AI\Bot" />
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\TOOLS\Forensic" />
-      <recent name="C:\Users\Xersès\PycharmProjects\Andromeda\Modules\TOOLS" />
-      <recent name="C:\Users\TheBloodredEagle\PycharmProjects\Andromeda\Modules\DATA BASE" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -140,7 +116,7 @@
       <workItem from="1749399953946" duration="668000" />
       <workItem from="1749477297732" duration="24000" />
       <workItem from="1749884610894" duration="394000" />
-      <workItem from="1749886591766" duration="2167000" />
+      <workItem from="1749886591766" duration="4755000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -238,7 +214,39 @@
       <option name="project" value="LOCAL" />
       <updated>1749388570169</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="dev-2">
+      <option name="closed" value="true" />
+      <created>1749888849887</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1749888849887</updated>
+    </task>
+    <task id="LOCAL-00014" summary="dev3">
+      <option name="closed" value="true" />
+      <created>1749888899676</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1749888899676</updated>
+    </task>
+    <task id="LOCAL-00015" summary="dev3">
+      <option name="closed" value="true" />
+      <created>1749889067785</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1749889067785</updated>
+    </task>
+    <task id="LOCAL-00016" summary="dev3">
+      <option name="closed" value="true" />
+      <created>1749889369383</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1749889369383</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +255,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="master" />
     <MESSAGE value="dev-2" />
-    <option name="LAST_COMMIT_MESSAGE" value="dev-2" />
+    <MESSAGE value="dev3" />
+    <option name="LAST_COMMIT_MESSAGE" value="dev3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
