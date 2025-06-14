@@ -1,0 +1,44 @@
+{
+  "intents": [
+    {
+      "tag": "salutation",
+      "patterns": ["bonjour", "salut", "hello", "coucou", "yoo", "bonsoir"],
+      "responses": ["Bonjour !", "Salut, comment puis-je vous aider ?", "Hello ! Enchanté de vous revoir.", "Bonjour, que puis-je faire pour vous ?"]
+    },
+    {
+      "tag": "au_revoir",
+      "patterns": ["au revoir", "bye", "adieu", "ciao", "à plus", "bonne journée", "bonne soirée"],
+      "responses": ["Au revoir !", "À bientôt !", "Bye !", "Passez une bonne journée !", "À la prochaine !"]
+    },
+    {
+      "tag": "nom",
+      "patterns": ["quel est ton nom", "ton nom", "qui es tu", "comment t'appelles tu"],
+      "responses": ["Je suis un chatbot, je n'ai pas de nom.", "Vous pouvez m'appeler l'assistant IA.", "Je suis un programme conçu pour vous aider."]
+    },
+    {
+      "tag": "merci",
+      "patterns": ["merci", "merci beaucoup", "super merci", "génial merci"],
+      "responses": ["De rien !", "Avec plaisir !", "Pas de problème !", "Ravi de vous avoir aidé."]
+    },
+    {
+      "tag": "aide",
+      "patterns": ["aide", "besoin d'aide", "que peux tu faire", "comment ça marche"],
+      "responses": ["Je peux répondre à des questions simples sur l'heure, la météo, ou vous saluer. Posez-moi une question !", "Je suis là pour vous aider ! Dites-moi ce dont vous avez besoin.", "Je suis un chatbot conçu pour des interactions simples. Essayez une question !"]
+    },
+    {
+      "tag": "heure",
+      "patterns": ["quelle heure est-il", "l'heure", "donne moi l'heure"],
+      "responses": ["Il est actuellement %TIME%.", "L'heure actuelle est %TIME%."]
+    },
+    {
+      "tag": "meteo",
+      "patterns": ["quelle est la météo", "meteo", "temps qu'il fait", "prévisions meteo", "il fait quel temps"],
+      "responses": ["Je n'ai pas accès aux données météorologiques en temps réel.", "Je ne peux pas vérifier la météo pour le moment.", "Désolé, je ne peux pas vous donner la météo."]
+    },
+    {
+      "tag": "localisation",
+      "patterns": ["où te situes-tu", "ta localisation", "où es-tu"],
+      "responses": ["Je suis un programme informatique et je n'ai pas de localisation physique.", "J'existe dans le cloud, donc je n'ai pas d'endroit précis."]
+    }
+  ]
+}
