@@ -16,13 +16,15 @@
         <option value="package.json" />
         <option value="Python Script" />
         <option value="Dockerfile" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="dev-2" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -47,32 +49,34 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;Python.andro.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.andromeda.executor&quot;: &quot;Run&quot;,
-    &quot;Python.data_utils.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.docker.executor&quot;: &quot;Run&quot;,
-    &quot;Python.forensic_menu.executor&quot;: &quot;Run&quot;,
-    &quot;Python.grr_api_client.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.grr_set.executor&quot;: &quot;Run&quot;,
-    &quot;Python.ia_chat_bot.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.mig_set.executor&quot;: &quot;Run&quot;,
-    &quot;Python.save data.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.volatily-mainset.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev-2&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Xersès/Downloads/Andromeda-dev-2&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "Python.andro.executor": "Debug",
+    "Python.andromeda.executor": "Run",
+    "Python.data_utils.executor": "Debug",
+    "Python.docker.executor": "Run",
+    "Python.forensic_menu.executor": "Run",
+    "Python.grr_api_client.executor": "Debug",
+    "Python.grr_set.executor": "Run",
+    "Python.ia_chat_bot.executor": "Debug",
+    "Python.mig_set.executor": "Run",
+    "Python.save data.executor": "Debug",
+    "Python.volatily-mainset.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "dev-3",
+    "last_opened_file_path": "C:/Users/Xersès/Downloads/Andromeda-dev-2",
+    "list.type.of.created.stylesheet": "CSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Xersès\PycharmProjects\Andromeda" />
@@ -109,7 +113,7 @@
       <workItem from="1749399953946" duration="668000" />
       <workItem from="1749477297732" duration="24000" />
       <workItem from="1749884610894" duration="394000" />
-      <workItem from="1749886591766" duration="5102000" />
+      <workItem from="1749886591766" duration="5495000" />
     </task>
     <task id="LOCAL-00001" summary="master">
       <option name="closed" value="true" />
@@ -247,7 +251,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749891686437</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="dev3">
+      <option name="closed" value="true" />
+      <created>1749892034031</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1749892034031</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
