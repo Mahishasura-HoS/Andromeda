@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestionnaire de Fichiers</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css"> </head>
+<body>
+    <div class="header">
+        <h1>Gestionnaire de Fichiers</h1>
+    </div>
+
+    <div class="container">
+        <?php
+        // Affichage des messages générés par le PHP
+        if (!empty($message)) {
+            echo $message;
+        }
+        ?>
+
+        <h2>Liste des Fichiers</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Nom du Fichier</th>
+                    <th>Type</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php
+                // Vérifier si la requête a retourné des résultats
+                if ($result->num_rows > 0) {
+                    // Parcourir chaque ligne de résultat
+                    while($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . htmlspecialchars($row["id"]) . "</td>"; // htmlspecialchars pour la sécurité
+                        echo "<td><a href='telecharger.php?id=" . htmlspecialchars($row["id"]) . "' class='file-link' target='_blank'>" . htmlspecialchars($row["nom_fichier"]) . "</a></td>";
+                        echo "<td>" . htmlspecialchars($row["type_fichier"]) . "</td>";
+                        echo "<td>";
+                        // Formulaire de suppression pour chaque fichier
+                        echo "<form class='delete-form' method='POST' action='index.php'>";
+                        echo "<input type='hidden' name='action' value='supprimer'>";
+                        echo "<input type='hidden' name='id_fichier_supprimer' value='" . htmlspecialchars($row["id"]) . "'>";
+                        echo "<button type='submit' class='btn btn-danger'>Supprimer</button>";
+                        echo "</form>";
+                        echo "</td>";
+                        echo "</tr>";
+                    }
+                } else {
+                    // Message si aucun fichier n'est trouvé
+                    echo "<tr><td colspan='4'>Aucun fichier trouvé. Téléchargez-en un ci-dessous !</td></tr>";
+                }
+                ?>
+            </tbody>
+        </table>
+
+        <h2>Télécharger un Nouveau Fichier</h2>
+        <form method="POST" action="index.php" enctype="multipart/form-data">
+            <input type="hidden" name="action" value="telecharger">
+            <label for="fichier">Sélectionner un fichier :</label>
+            <input type="file" id="fichier" name="fichier" required><br>
+
+            <button type="submit" class="btn btn-primary">Télécharger le Fichier</button>
+        </form>
+    </div>
+
+    <?php
+    // Fermer la connexion à la base de données une fois toutes les opérations terminées
+    $conn->close();
+    ?>
+</body>
+</html>
